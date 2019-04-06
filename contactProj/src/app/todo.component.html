@@ -1,0 +1,35 @@
+<h1>hello priyanka</h1>
+<h2>{{name}}</h2>
+<h2>{{userList | json}}</h2>
+<!--  this is my comments  -->
+* is synthetic sugar
+<table border="1">
+    <tr *ngFor="let myuser of userList;index as myindex">
+        <td>{{myindex+1}}</td>
+        <td>{{myuser.name}}</td>
+        <td>{{myuser.age}}</td>
+    </tr>
+</table>
+<br /><br /><br /><br /><br />
+<table border="1">
+    <ng-template ngFor let-myuser [ngForOf]="userList" let-myindex="index" [ngForTrackBy]="myTrackby">
+        <tr>
+            <td>{{myindex+1}}</td>
+            <td>{{myuser.name}}</td>
+            <td>{{myuser.age}}</td>
+        </tr>
+    </ng-template>
+</table>
+
+<h1 *ngIf="true">This is true will be deplayed</h1>
+<h1 *ngIf="false">This is true will not be deplayed</h1>
+<h1 [ngSwitch]="exp">
+    <!-- the same view can be shown in more than one case -->
+    <span *ngSwitchCase="1">.1..</span>
+    <span *ngSwitchCase="2">2...</span>
+    <span *ngSwitchCase="10">.10..</span>
+    <!--default case when there are no matches -->
+    <span *ngSwitchDefault>..defacult.</span>
+</h1>
+<input [(ngModel)]="stefy" type="text">
+<button (click)="getRT()" type="button">Btn soniye</button>
