@@ -1,0 +1,37 @@
+<form [formGroup]="loginForm" (ngSubmit)="submit()">
+  <input type="text" formControlName="username"><br/>
+  password: <input placeholder="my form" type="password" formControlName="password"><br/>
+  {{password.value}}--eror{{password.errors | json}}
+  <h1 *ngIf="!password.valid && ( password.touched || password.dirty)">
+    <span *ngIf="password.errors.required">This field is required</span>
+    <span *ngIf="password.errors.minlength">Minlength</span>
+  </h1>
+  <br/>
+  <button type="button" (click)="submit()">Clicl btn</button>
+  <br/>
+  <button type="submit">Submit</button>
+  <br>
+  <input type="checkbox" name="playname" (change)="mySubmit($event)" value="playing" formControlName="playing">Playing
+  <input type="checkbox" value="" formControlName="batting">Batting
+  <input type="checkbox" value="" formControlName="Swimming">Swimming
+  <input type="checkbox" value="" formControlName="Bowling">Bowling
+  <button type="button" (click)="checkboxSubmit()">Checkbox Click</button>
+  <div formGroupName="address">
+    <input type="line1" formControlName="line1">
+    <div formGroupName="line2">
+      <input type="pincode" formControlName="pincode">
+    </div>
+  </div>
+</form>
+<h1> Templaet drivemn form</h1>
+{{loginForm.value | json}}
+<form #myform="ngForm">
+  <input type="text" #mytitleuu name="mytitle" [(ngModel)]="mytitle">
+  <input type="text" name="btitle" [(ngModel)]="btitle">
+  {{mytitle}}
+  <button type="button" (click)="mySubmit(mytitleuu.value)">submit</button>
+</form>
+
+<input type="text" name="btitle" (input)="btitle=$event">
+
+<h1></h1>
