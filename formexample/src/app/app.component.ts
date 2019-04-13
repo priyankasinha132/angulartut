@@ -33,11 +33,11 @@ export class AppComponent {
   }
   submit() {
     console.log(this.password);
-    console.log(this.loginForm)
+    console.log(this.loginForm);
 
   }
   checkboxSubmit() {
-    console.log(this.loginForm)
+    console.log(this.loginForm);
 
   }
   mySubmit(data) {
