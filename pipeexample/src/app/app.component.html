@@ -1,0 +1,21 @@
+<h3>{{title}}</h3>
+<h3>{{title | uppercase}}</h3>
+<h3>{{title | lowercase}}</h3>
+<h3>{{title | titlecase}}</h3>
+<h3>{{title | slice:2:5}}</h3>
+<h3>{{mySalary | number:'10.4-5'}}</h3>
+<h3>{{123 | number:'10.4-5'}}</h3>
+<h3>{{mySalary | currency:'INR':true:'10.4-5'}}</h3>
+<h3>{{mySalary | percent:'10.4-5'}}</h3>
+<h3>{{date | date:'MMM, dd yyyy'}}</h3>
+<button (click)="toogle()">toogle</button>
+<h3 [ngClass]="{'classcustom': this.redClass}">my custom html</h3>
+<h3 [ngClass]="cstmClass">my custom html</h3>
+<h3 [class.classcustom]="redClass" [hidden]="redClass">my custom html</h3>
+<input [name]="redClass" [value]="redClass">
+<h1 [ngStyle]="cstmStyle" >my h1</h1>
+
+
+
+
+
