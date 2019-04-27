@@ -1,0 +1,24 @@
+<form [formGroup]="loginForm" (ngSubmit)="submit()">
+    <input formControlName="username" name="username" /><br />
+    <input formControlName="password" name="password" /><br />
+    <span *ngIf="password.invalid && (password.dirty || password.touched)">
+      <span *ngIf="password.errors.required">This filed is required</span><br />
+      <span *ngIf="password.errors.minlength">This filed should be 5 charter</span><br />
+    </span>
+    <select formControlName="gender">
+      <option value="" selected>Please Select</option>
+      <option [value]="gender.male">{{gender.male}}</option>
+      <option [value]="gender.female">{{gender.female}}</option>
+    </select>
+    <input type="button" value="click" (click)="submit()" />
+    <input type="submit" value="submit" />
+  </form>
+  <table border="1">
+    <tr *ngFor="let user of loginUsers;index as i">
+      <td>{{i}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.gender}}</td>
+      <td>{{user.password}}</td>
+    </tr>
+  </table>
+  
